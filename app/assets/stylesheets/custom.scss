@@ -2,3 +2,10 @@
 @import "bootstrap";
 
 body { padding-top: 70px; }
+
+.navbar {
+  background-color: #3B5998;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
