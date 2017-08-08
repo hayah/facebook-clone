@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'clearance'
+gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'rspec-rails'
