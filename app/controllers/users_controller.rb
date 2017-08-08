@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       sign_in(@user)
       redirect_to root_url
     else
-      render root_url
+      render welcome_path
     end
   end
 

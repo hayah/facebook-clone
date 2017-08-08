@@ -4,7 +4,7 @@
   .col-md-6
     .fieldset.login
       legend Log in
-      = form_for :session, url: session_path do |f|
+      = form_for :session, url: sessions_path do |f|
         .field
           = f.text_field :email, placeholder: 'Email', class: 'form-control'
         .field
