@@ -15,6 +15,12 @@
     .fieldset.signup
       legend Sign up
       = form_for @user do |f|
+        - if @user.errors.any?
+          .alert.alert-danger
+            | The form contains #{pluralize(@user.errors.count, 'error')}
+          ul
+          - @user.errors.full_messages.each do |msg|
+            li = msg
         .field
           = f.text_field :first_name, placeholder: 'First name',
             class: 'form-control'
