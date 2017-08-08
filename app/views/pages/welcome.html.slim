@@ -1,0 +1,30 @@
+.row
+  .col-md-6
+    | Social network helps you connect and share with the people in your life.
+  .col-md-6
+    .fieldset.login
+      legend Log in
+      = form_for :session, url: session_path do |f|
+        .field
+          = f.text_field :email, placeholder: 'Email', class: 'form-control'
+        .field
+          = f.text_field :password, placeholder: 'Password', class: 'form-control'
+        .field
+          = f.submit 'Log in', class: 'btn btn-default'
+    hr
+    .fieldset.signup
+      legend Sign up
+      = form_for @user do |f|
+        .field
+          = f.text_field :first_name, placeholder: 'First name',
+            class: 'form-control'
+        .field
+          = f.text_field :last_name, placeholder: 'Last name',
+            class: 'form-control'
+        .field
+          = f.email_field :email, placeholder: 'Email', class: 'form-control'
+        .field
+          = f.password_field :password, placeholder: 'Password',
+            class: 'form-control'
+        .field
+          = f.submit 'Sign up'
