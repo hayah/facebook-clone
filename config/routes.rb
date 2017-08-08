@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#show'
+  root 'pages#welcome'
   resources :users
   resources :posts
 
