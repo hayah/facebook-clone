@@ -13,8 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.first
-    @post = @user.posts.build(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to request.referer
