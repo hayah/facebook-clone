@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root 'pages#welcome'
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: "users#home", as: :signed_in_root
+  end
+
+  constraints Clearance::Constraints::SignedOut.new do
+    root to: "pages#welcome"
+  end
+
   resources :users
   resources :posts
 
