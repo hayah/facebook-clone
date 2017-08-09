@@ -1,11 +1,46 @@
-= form_for @post, url: posts_path do |f|
-  = f.text_field :content, placeholder: "What's on your mind?"
-  = f.submit 'Post'
-- @posts.each do |post|
-  = post.content
-  '  |
-  = link_to 'Edit', edit_post_path(post)
-  '  |
-  = link_to 'Delete', post, method: :delete,
-                                       data: { confirm: 'Are you sure?' }
+.col-md-2
+  | my page
   br
+  | feed
+  br
+  | messages
+  br
+  | friends
+  br
+  | photos
+  br
+  hr
+  | favorites
+.col-md-2
+  .avatar
+    | user pic
+  br
+  | edit profile
+  .friend_list
+    | friends
+  br
+  .group_list
+    | groups
+  br
+.col-md-8
+  p FULL NAME
+  p birth date
+  p city
+  p gender
+  p phone
+  p site
+  p BIO
+  hr
+  = form_for @post, url: posts_path do |f|
+    = f.text_field :content, placeholder: "What's on your mind?"
+    = f.submit 'Post'
+  .posts
+    - @posts.each do |post|
+      .post
+        = post.content
+        '  |
+        = link_to 'Edit', edit_post_path(post)
+        '  |
+        = link_to 'Delete', post, method: :delete,
+                                             data: { confirm: 'Are you sure?' }
+        br
