@@ -15,7 +15,7 @@
   .avatar
     | user pic
   br
-  | edit profile
+  = link_to 'Edit profile', edit_user_path(@user)
   .friend_list
     | friends
   br

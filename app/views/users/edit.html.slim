@@ -1,0 +1,43 @@
+.row
+  .fieldset
+    legend Edit profile
+    = form_for @user, html: {class: 'form-horizontal'} do |f|
+      .form-group
+        .col-md-2
+          = f.label :first_name, class: 'control-label'
+        .col-md-6
+          = f.text_field :first_name, placeholder: 'First name', class: 'form-control'
+      .form-group
+        .col-md-2
+          = f.label :last_name, class: 'control-label'
+        .col-md-6
+          = f.text_field :last_name, placeholder: 'Last name', class: 'form-control'
+      .form-group
+        .col-md-2
+          = f.label :phone_number, class: 'control-label'
+        .col-md-6
+          = f.text_field :phone_number, placeholder: 'Phone', class: 'form-control'
+      .form-group
+        .col-md-2
+          = f.label :email, class: 'control-label'
+        .col-md-6
+          = f.email_field :email, placeholder: 'Email', class: 'form-control'
+      .form-group
+        .col-md-2
+          = f.label :birthdate, class: 'control-label'
+        .col-md-6
+          = f.date_field :birthdate, placeholder: 'Birth date', class: 'form-control'
+      .form-group
+        .col-md-2
+          = f.label :city, class: 'control-label'
+        .col-md-6
+          = f.text_field :city, placeholder: 'City', class: 'form-control'
+      .form-group
+        .col-md-2
+          = f.label :bio, class: 'control-label'
+        .col-md-6
+          = f.text_area :bio, placeholder: 'Bio', class: 'form-control'
+      hr
+        .col-md-8
+          .text-center
+            = f.submit 'Save changes', class: 'btn btn-default'
