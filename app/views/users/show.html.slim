@@ -23,13 +23,11 @@
     | groups
   br
 .col-md-8
-  p FULL NAME
-  p birth date
-  p city
-  p gender
-  p phone
-  p site
-  p BIO
+  h3 = @user.full_name
+  p Birth date: #{@user.birthdate}
+  p City: #{@user.city}
+  p Phone: #{@user.phone_number}
+  p Bio: #{@user.bio}
   hr
   = form_for @post, url: posts_path do |f|
     = f.text_field :content, placeholder: "What's on your mind?"

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :new_post, only: [:show, :home]
 
   def show
+    @user = User.find(params[:id])
     @posts = Post.where(user_id: params[:id])
   end
 
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
 
   def home
     @posts = Post.where(user: current_user)
+    @user = current_user
     render :show
   end
 
