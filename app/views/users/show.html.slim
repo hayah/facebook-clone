@@ -24,7 +24,7 @@
   br
 .col-md-8
   h3 = @user.full_name
-  p Birth date: #{@user.birthdate}
+  p Birth date: #{@user.birthdate.strftime('%d %B %Y')}
   p City: #{@user.city}
   p Phone: #{@user.phone_number}
   p Bio: #{@user.bio}
