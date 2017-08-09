@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Posts", type: :feature, js: true do
   scenario 'user can create, edit, and delete a post' do
     user = create(:user)
-    visit user_path(user)
+    visit root_path(as: user)
 
     expect {
       fill_in "What's on your mind?", with: 'Rails'

@@ -8,6 +8,9 @@ html
   body
     == render 'layouts/header'
     .container
+      - flash.each do |type, message|
+        div class = "alert alert-info #{type}"
+            = message
       == yield
       == render 'layouts/footer'
       = debug(params) if Rails.env.development?
